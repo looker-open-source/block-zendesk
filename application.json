@@ -1,0 +1,35 @@
+{
+  "theme": {
+    "colors": {
+      "primary": "#6AA9EF",
+      "primaryDark": "#6297D1",
+      "primaryDarker": "#4E7DB0"
+    }
+  },
+  "name": "Zendesk Analytics",
+  "navigation": {
+    "home": {
+      "title": "Overview",
+      "path": "",
+      "icon": "home",
+      "description": "Dat Chat Lyfe"
+    }
+  },
+  "pages": [
+    {
+      "path": "",
+      "title": "Overview",
+      "type": "dashboardCollection",
+      "dashboardCollection": {
+        "default": "support_overview",
+        "dashboards": [
+          {
+            "lookmlID": "zendesk_analytics::support_overview",
+            "name": "Support Overview",
+            "permalink": "support_overview"
+          }
+        ]
+      }
+    }
+  ]
+}
