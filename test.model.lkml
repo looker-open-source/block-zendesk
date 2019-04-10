@@ -1,4 +1,6 @@
 
 view: app {}
 
-explore: app {}
+explore: app {
+  hidden: yes
+}
