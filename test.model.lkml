@@ -1,0 +1,4 @@
+
+view: app {}
+
+explore: app {}
