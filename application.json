@@ -9,11 +9,24 @@
   "name": "Zendesk Analytics",
   "navigation": {
     "home": {
-      "title": "Overview",
+      "title": "Home",
       "path": "",
       "icon": "home",
       "description": "Dat Chat Lyfe"
-    }
+    },
+    "sections": [
+      {
+        "title": "Agent",
+        "key": "agent",
+        "items": [
+          {
+            "title": "Overview",
+            "path": "agent_overview",
+            "icon": "sales-analytics/performance"
+          }
+        ]
+      }
+    ]
   },
   "pages": [
     {
@@ -27,6 +40,20 @@
             "lookmlID": "zendesk_analytics::support_overview",
             "name": "Support Overview",
             "permalink": "support_overview"
+          }
+        ]
+      }
+    },
+    {
+      "path": "agent_overview",
+      "title": "Agent Overview",
+      "type": "dashboardCollection",
+      "dashboardCollection": {
+        "dashboards": [
+          {
+            "lookmlID": "zendesk_analytics::agent_overview",
+            "name": "Agent Overview",
+            "permalink": "agent_overview"
           }
         ]
       }
