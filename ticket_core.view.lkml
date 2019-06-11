@@ -9,6 +9,18 @@ view: ticket_core {
     primary_key: yes
     type: number
     sql: ${TABLE}.id ;;
+    link: {
+      label: "Zendesk Ticket Lookup"
+      url: "https://{{ ticket._LOOKER_INSTANCE_DOMAIN._value }}.looker.com/dashboards/block_zendesk::ticket_lookup?Ticket={{ value }}"
+      icon_url: "http://www.looker.com/favicon.ico"
+    }
+  }
+
+  dimension: id_direct_link {
+    type: number
+    sql: ${id} ;;
+    html: <a href="https://{{ ticket._ZENDESK_INSTANCE_DOMAIN._value }}.zendesk.com/agent/tickets/{{ value }}" target="_blank"><img src="http://www.google.com/s2/favicons?domain=www.zendesk.com" height=16 width=16> {{ value }}</a> ;;
+    hidden: yes
   }
 
   dimension: dash_title {
