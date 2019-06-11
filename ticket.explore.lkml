@@ -51,6 +51,20 @@ explore: ticket_core {
     sql_on: ${ticket.requester_id} = ${requester.id} ;;
   }
 
+  join: requester_facts {
+    sql_on:  ${requester.id} = ${requester_facts.id} ;;
+    relationship: one_to_one
+  }
+
+  join: requester_previous_tickets {
+    from: ticket
+    type: left_outer
+    sql_on: ${ticket.requester_id} = ${requester_previous_tickets.requester_id} AND
+          ${ticket.id} != ${requester_previous_tickets.id} AND
+          ${ticket.created_date} < ${requester_previous_tickets.created_date};;
+    relationship: one_to_many
+  }
+
   join: ticket_commenter {
     from: user
     relationship: many_to_one

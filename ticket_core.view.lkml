@@ -11,6 +11,13 @@ view: ticket_core {
     sql: ${TABLE}.id ;;
   }
 
+  dimension: id_direct_link {
+    type: number
+    sql: ${id} ;;
+    html: <a href="https://{{ ticket._ZENDESK_INSTANCE_DOMAIN._value }}.zendesk.com/agent/tickets/{{ value }}" target="_blank"><img src="http://www.google.com/s2/favicons?domain=www.zendesk.com" height=16 width=16> {{ value }}</a> ;;
+    hidden: yes
+  }
+
   dimension: dash_title {
     hidden: yes
     type: string
