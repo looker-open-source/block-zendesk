@@ -9,6 +9,11 @@ view: ticket_core {
     primary_key: yes
     type: number
     sql: ${TABLE}.id ;;
+    link: {
+      label: "Zendesk Ticket Lookup"
+      url: "https://{{ ticket._LOOKER_INSTANCE_DOMAIN._value }}.looker.com/dashboards/block_zendesk::ticket_lookup?Ticket={{ value }}"
+      icon_url: "http://www.looker.com/favicon.ico"
+    }
   }
 
   dimension: id_direct_link {
