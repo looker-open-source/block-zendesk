@@ -311,7 +311,7 @@
     model: block_zendesk
     explore: ticket
     type: table
-    fields: [ticket_comment.created_time, commenter.name, commenter.is_internal, ticket_comment.body]
+    fields: [ticket_comment.created_time, ticket_comment.body]
     sorts: [ticket_comment.created_time]
     limit: 500
     column_limit: 50
@@ -359,10 +359,10 @@
     model: block_zendesk
     explore: ticket
     type: looker_column
-    fields: [ticket_comment.count, ticket_comment.created_week, commenter.is_internal]
-    pivots: [commenter.is_internal]
-    fill_fields: [ticket_comment.created_week, commenter.is_internal]
-    sorts: [ticket_comment.created_week desc, commenter.is_internal]
+    fields: [ticket_comment.count, ticket_comment.created_week]
+    pivots: []
+    fill_fields: [ticket_comment.created_week]
+    sorts: [ticket_comment.created_week desc]
     limit: 500
     column_limit: 50
     color_application:
