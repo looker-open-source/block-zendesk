@@ -1,7 +1,7 @@
 view: brand_core {
   sql_table_name: @{SCHEMA_NAME}.brand ;;
 
-  ### Field Definition Source: https://developer.zendesk.com/rest_api/docs/support/brands
+  ### Field descriptions source: https://developer.zendesk.com/rest_api/docs/support/brands
 
   dimension: id {
     primary_key: yes
