@@ -10,7 +10,7 @@ view: brand_core {
     description: "Automatically assigned when the brand is created"
   }
 
-  dimension: is_active {
+  dimension: active {
     type: yesno
     sql: ${TABLE}.active ;;
     description: "If the brand is set as active"
@@ -22,7 +22,7 @@ view: brand_core {
     description: "The url of the brand"
   }
 
-  dimension: is_default {
+  dimension: default {
     type: yesno
     sql: ${TABLE}.``default`` ;;
     description: "Is the brand the default brand for this account"

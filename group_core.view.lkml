@@ -26,7 +26,7 @@ view: group_core {
     description: "The time the group was created"
   }
 
-  dimension: is_deleted {
+  dimension: deleted {
     type: yesno
     sql: ${TABLE}.deleted ;;
     description: "Deleted groups get marked as such"
