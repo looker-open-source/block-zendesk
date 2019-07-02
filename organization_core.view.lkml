@@ -45,7 +45,7 @@ view: organization_core {
   dimension: external_id {
     type: string
     sql: ${TABLE}.external_id ;;
-    description: "A unique external id to associate organizations to an external record"
+    description: "A unique external ID to associate organizations to an external record"
   }
 
   dimension: group_id {
@@ -97,7 +97,7 @@ view: organization_core {
   dimension: url {
     type: string
     sql: ${TABLE}.url ;;
-    description: "The API url of this organization"
+    description: "The API URL of this organization"
   }
 
   measure: count {

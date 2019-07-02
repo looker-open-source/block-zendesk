@@ -56,7 +56,7 @@ view: group_core {
   dimension: url {
     type: string
     sql: ${TABLE}.url ;;
-    description: "The API url of this group"
+    description: "The API URL of this group"
   }
 
   measure: count {

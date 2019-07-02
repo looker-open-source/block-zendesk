@@ -19,7 +19,7 @@ view: brand_core {
   dimension: brand_url {
     type: string
     sql: ${TABLE}.brand_url ;;
-    description: "The url of the brand"
+    description: "The URL of the brand"
   }
 
   dimension: default {
@@ -43,7 +43,7 @@ view: brand_core {
   dimension: url {
     type: string
     sql: ${TABLE}.url ;;
-    description: "The API url of this brand"
+    description: "The API URL of this brand"
   }
 
   measure: count {

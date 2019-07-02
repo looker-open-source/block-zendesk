@@ -14,14 +14,14 @@ view: group_member_core {
     type: number
     # hidden: yes
     sql: ${TABLE}.group_id ;;
-    description: "The id of a group"
+    description: "The ID of a group"
   }
 
   dimension: user_id {
     type: number
     # hidden: yes
     sql: ${TABLE}.user_id ;;
-    description: "The id of an agent"
+    description: "The ID of an agent"
   }
 
   measure: count {
