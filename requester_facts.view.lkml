@@ -9,6 +9,7 @@ view: requester_facts {
   dimension: id {
     type: number
     primary_key: yes
+    description: "User ID of requester"
   }
   dimension: count_open_tickets {
     type: number

@@ -5,18 +5,21 @@ view: organization_member_core {
     primary_key: yes
     type: number
     sql: ${TABLE}.id ;;
+    description: "Organization Member ID. Automatically assigned when the membership is created"
   }
 
   dimension: organization_id {
     type: number
     # hidden: yes
     sql: ${TABLE}.organization_id ;;
+    description: "The ID of the organization associated with this user, in this membership"
   }
 
   dimension: user_id {
     type: number
     # hidden: yes
     sql: ${TABLE}.user_id ;;
+    description: "The ID of the user for whom this memberships belongs"
   }
 
   measure: count {
