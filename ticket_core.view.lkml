@@ -1,6 +1,8 @@
 view: ticket_core {
   sql_table_name: @{SCHEMA_NAME}.ticket ;;
 
+  ### Field descriptions source: https://developer.zendesk.com/rest_api/docs/support/tickets
+
   parameter: name_select {
     type: string
   }

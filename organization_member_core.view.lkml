@@ -1,6 +1,8 @@
 view: organization_member_core {
   sql_table_name: @{SCHEMA_NAME}.organization_member ;;
 
+  ### Field descriptions source: https://developer.zendesk.com/rest_api/docs/support/organization_memberships
+
   dimension: id {
     primary_key: yes
     type: number
