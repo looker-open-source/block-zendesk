@@ -7,7 +7,7 @@ view: brand_core {
     primary_key: yes
     type: number
     sql: ${TABLE}.id ;;
-    description: "Automatically assigned when the brand is created"
+    description: "Brand ID. Automatically assigned when the brand is created"
   }
 
   dimension: active {

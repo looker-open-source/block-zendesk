@@ -1,6 +1,8 @@
 view: ticket_core {
   sql_table_name: @{SCHEMA_NAME}.ticket ;;
 
+  ### Field descriptions source: https://developer.zendesk.com/rest_api/docs/support/tickets
+
   parameter: name_select {
     type: string
   }
@@ -33,17 +35,20 @@ view: ticket_core {
   dimension: allow_channelback {
     type: yesno
     sql: ${TABLE}.allow_channelback ;;
+    description: "Is false if channelback is disabled, true otherwise. Only applicable for channels framework ticket"
   }
 
   dimension: assignee_id {
     type: number
     sql: ${TABLE}.assignee_id ;;
+    description: "The agent currently assigned to the ticket"
   }
 
   dimension: brand_id {
     type: number
     # hidden: yes
     sql: ${TABLE}.brand_id ;;
+    description: "Enterprise only. The ID of the brand a ticket is associated with"
   }
 
   dimension_group: created {
@@ -93,6 +98,7 @@ view: ticket_core {
   dimension: description {
     type: string
     sql: ${TABLE}.description ;;
+    description: "The first comment on a ticket"
   }
 
   dimension_group: due {
@@ -112,28 +118,33 @@ view: ticket_core {
   dimension: external_id {
     type: string
     sql: ${TABLE}.external_id ;;
+    description: "An ID you can use to link Zendesk Support tickets to local records"
   }
 
   dimension: forum_topic_id {
     type: number
     # hidden: yes
     sql: ${TABLE}.forum_topic_id ;;
+    description: "The topic a ticket originated from, if any"
   }
 
   dimension: group_id {
     type: number
     # hidden: yes
     sql: ${TABLE}.group_id ;;
+    description: "The group a ticket is assigned to"
   }
 
   dimension: has_incidents {
     type: yesno
     sql: ${TABLE}.has_incidents ;;
+    description: "Is true if a ticket has been marked as a problem, false otherwise"
   }
 
   dimension: is_public {
     type: yesno
     sql: ${TABLE}.is_public ;;
+    description: "Is true if any comments are public, false otherwise"
   }
 
   dimension: is_responded_to {
@@ -166,12 +177,14 @@ view: ticket_core {
     type: number
     # hidden: yes
     sql: ${TABLE}.organization_id ;;
+    description: "The organization ID of the requester."
   }
 
   # dimension: priority is exposed in the config file and is formatted; priority_raw used in the priority_rank dimension
   dimension: priority_raw {
     type: string
     sql: ${TABLE}.priority ;;
+    description: "The urgency with which the ticket should be addressed. Possible values: 'urgent', 'high', 'normal', 'low'"
   }
 
   dimension: priority_rank {
@@ -181,36 +194,43 @@ view: ticket_core {
               when ${priority_raw} = 'high' THEN 3
               when ${priority_raw} = 'urgent' THEN 4
               else null end;;
+    description: "Priority scale from 1 (Low) to 4 (Urgent)"
   }
 
   dimension: problem_id {
     type: number
     sql: ${TABLE}.problem_id ;;
+    description: "For tickets of type 'incident', the ID of the problem the incident is linked to"
   }
 
   dimension: recipient {
     type: string
     sql: ${TABLE}.recipient ;;
+    description: "The original recipient e-mail address of the ticket"
   }
 
   dimension: requester_id {
     type: number
     sql: ${TABLE}.requester_id ;;
+    description: "The ID of the user who requested the ticket"
   }
 
   dimension: status {
     type: string
     sql: ${TABLE}.status ;;
+    description: "The state of the ticket. Possible values: 'new', 'open', pending, 'hold', 'solved', 'closed'"
   }
 
   dimension: subject {
     type: string
     sql: ${TABLE}.subject ;;
+    description: "The value of the subject field for this ticket"
   }
 
   dimension: submitter_id {
     type: number
     sql: ${TABLE}.submitter_id ;;
+    description: "The ID of the user who submitted the ticket. The submitter always becomes the author of the first comment on the ticket"
   }
 
   dimension: ticket_age_days_tier {
@@ -224,6 +244,7 @@ view: ticket_core {
   dimension: ticket_form_id {
     type: number
     sql: ${TABLE}.ticket_form_id ;;
+    description: "Enterprise only. The ID of the ticket form to render for the ticket"
   }
 
   dimension: ticket_link {
@@ -240,6 +261,7 @@ view: ticket_core {
   dimension: type {
     type: string
     sql: ${TABLE}.type ;;
+    description: "The type of ticket. Possible values: 'problem', 'incident', 'question' or 'task'"
   }
 
   dimension_group: updated {
@@ -259,6 +281,7 @@ view: ticket_core {
   dimension: url {
     type: string
     sql: ${TABLE}.url ;;
+    description: "The API URL of this ticket"
   }
 
   dimension: via_channel {
