@@ -1,3 +1,9 @@
+include: "//@{CONFIG_PROJECT_NAME}/user_config.view.lkml"
+
+view: user {
+  extends: [user_config]
+}
+
 view: user_core {
   sql_table_name: @{SCHEMA_NAME}.user ;;
 

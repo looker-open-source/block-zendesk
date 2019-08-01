@@ -1,3 +1,9 @@
+include: "//@{CONFIG_PROJECT_NAME}/group_config.view.lkml"
+
+view: group {
+  extends: [group_config]
+}
+
 view: group_core {
   sql_table_name: @{SCHEMA_NAME}.`group` ;;
 

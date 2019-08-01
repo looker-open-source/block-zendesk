@@ -1,3 +1,9 @@
+include: "//@{CONFIG_PROJECT_NAME}/brand_config.view.lkml"
+
+view: brand {
+  extends: [brand_config]
+}
+
 view: brand_core {
   sql_table_name: @{SCHEMA_NAME}.brand ;;
 

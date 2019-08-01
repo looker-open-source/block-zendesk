@@ -1,3 +1,9 @@
+include: "//@{CONFIG_PROJECT_NAME}/ticket_field_history_config.view.lkml"
+
+view: ticket_field_history {
+  extends: [ticket_field_history_config]
+}
+
 view: ticket_field_history_core {
   sql_table_name: @{SCHEMA_NAME}.ticket_field_history ;;
 

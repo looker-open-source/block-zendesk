@@ -1,3 +1,9 @@
+include: "//@{CONFIG_PROJECT_NAME}/ticket_config.view.lkml"
+
+view: ticket {
+  extends: [ticket_config]
+}
+
 view: ticket_core {
   sql_table_name: @{SCHEMA_NAME}.ticket ;;
 
@@ -407,7 +413,7 @@ view: ticket_core {
     type: count
     label: "Solved"
     filters: {
-      field: is_solved
+      field: ticket.is_solved
       value: "Yes"
     }
   }
