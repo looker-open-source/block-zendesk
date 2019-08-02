@@ -1,3 +1,9 @@
+include: "//@{CONFIG_PROJECT_NAME}/ticket_config.view.lkml"
+
+view: ticket {
+  extends: [ticket_config]
+}
+
 view: ticket_core {
   sql_table_name: @{SCHEMA_NAME}.ticket ;;
 
@@ -13,7 +19,7 @@ view: ticket_core {
     sql: ${TABLE}.id ;;
     link: {
       label: "Zendesk Ticket Lookup"
-      url: "https://{{ ticket._LOOKER_INSTANCE_DOMAIN._value }}.looker.com/dashboards/block_zendesk::ticket_lookup?Ticket={{ value }}"
+      url: "/dashboards/block_zendesk::ticket_lookup?Ticket={{ value }}"
       icon_url: "http://www.looker.com/favicon.ico"
     }
   }
@@ -21,8 +27,8 @@ view: ticket_core {
   dimension: id_direct_link {
     type: number
     sql: ${id} ;;
-    html: <a href="https://{{ ticket._ZENDESK_INSTANCE_DOMAIN._value }}.zendesk.com/agent/tickets/{{ value }}" target="_blank"><img src="http://www.google.com/s2/favicons?domain=www.zendesk.com" height=16 width=16> {{ value }}</a> ;;
-    hidden: yes
+    hidden: no
+    html: <a href="https://@{ZENDESK_INSTANCE_DOMAIN}.zendesk.com/agent/tickets/{{ value }}" target="_blank"><img src="http://www.google.com/s2/favicons?domain=www.zendesk.com" height=16 width=16> {{ value }}</a> ;;
   }
 
   dimension: dash_title {
@@ -248,16 +254,16 @@ view: ticket_core {
   }
 
   dimension: ticket_link {
-    type: number
+    hidden: no
+    type: string
     sql: ${TABLE}.id ;;
     html: <img src="http://www.google.com/s2/favicons?domain=www.zendesk.com" height=16 width=16> {{ value }} ;;
     link: {
       label: "Zendesk Ticket"
-      url: "https://{{ ticket.@{ZENDESK_INSTANCE_DOMAIN}._value }}.zendesk.com/agent/tickets/{{ value }}"
+      url: "https://@{ZENDESK_INSTANCE_DOMAIN}.zendesk.com/agent/tickets/{{ value }}"
       icon_url: "https://d1eipm3vz40hy0.cloudfront.net/images/logos/zendesk-favicon.ico"
     }
   }
-
   dimension: type {
     type: string
     sql: ${TABLE}.type ;;
@@ -407,7 +413,7 @@ view: ticket_core {
     type: count
     label: "Solved"
     filters: {
-      field: is_solved
+      field: ticket.is_solved
       value: "Yes"
     }
   }

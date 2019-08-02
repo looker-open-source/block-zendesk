@@ -1,3 +1,9 @@
+include: "//@{CONFIG_PROJECT_NAME}/organization_tag_config.view.lkml"
+
+view: organization_tag {
+  extends: [organization_tag_config]
+}
+
 view: organization_tag_core {
   sql_table_name: @{SCHEMA_NAME}.organization_tag ;;
 
