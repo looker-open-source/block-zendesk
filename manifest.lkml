@@ -15,13 +15,7 @@ constant: SCHEMA_NAME {
   export: override_required
 }
 
-# TODO: Insert the name of your zendesk instance below (i.e. if your zendesk instance url is mycompany.zendesk.com, insert "'mycompany'")
 constant: ZENDESK_INSTANCE_DOMAIN {
-  value: "insert here"
-  export: override_required
-}
-
-constant: LOOKER_INSTANCE_DOMAIN {
   value: "insert here"
   export: override_required
 }

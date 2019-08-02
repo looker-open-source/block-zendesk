@@ -19,7 +19,7 @@ view: ticket_core {
     sql: ${TABLE}.id ;;
     link: {
       label: "Zendesk Ticket Lookup"
-      url: "https://@{LOOKER_INSTANCE_DOMAIN}.looker.com/dashboards/block_zendesk::ticket_lookup?Ticket={{ value }}"
+      url: "/dashboards/block_zendesk::ticket_lookup?Ticket={{ value }}"
       icon_url: "http://www.looker.com/favicon.ico"
     }
   }
