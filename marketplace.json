@@ -1,4 +1,11 @@
 {
+  "label": "Zendesk",
+  "category_label": "Tools",
+  "branding": {
+    "image_uri": "https://wwwstatic-d.lookercdn.com/blocks/logos/fivetran.png",
+    "tagline": "The Zendesk Block provides comprehensive analytics around customer support and satisfaction"
+  },
+
   "constants": {
     "CONNECTION_NAME": {
       "label": "Connection Name",
