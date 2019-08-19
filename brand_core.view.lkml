@@ -1,4 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/brand_config.view.lkml"
+include: "//@{CONFIG_PROJECT_NAME}/brand.view.lkml"
 
 view: brand {
   extends: [brand_config]

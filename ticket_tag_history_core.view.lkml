@@ -1,4 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/ticket_tag_history_config.view.lkml"
+include: "//@{CONFIG_PROJECT_NAME}/ticket_tag_history.view.lkml"
 
 view: ticket_tag_history {
   extends: [ticket_tag_history_config]

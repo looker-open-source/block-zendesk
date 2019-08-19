@@ -1,4 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/ticket_config.view.lkml"
+include: "//@{CONFIG_PROJECT_NAME}/ticket.view.lkml"
 
 view: ticket {
   extends: [ticket_config]

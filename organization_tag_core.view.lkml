@@ -1,4 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/organization_tag_config.view.lkml"
+include: "//@{CONFIG_PROJECT_NAME}/organization_tag.view.lkml"
 
 view: organization_tag {
   extends: [organization_tag_config]
