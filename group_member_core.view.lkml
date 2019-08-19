@@ -1,4 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/group_member_config.view.lkml"
+include: "//@{CONFIG_PROJECT_NAME}/group_member.view.lkml"
 
 view: group_member {
   extends: [group_member_config]

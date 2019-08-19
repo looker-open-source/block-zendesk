@@ -1,4 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/user_config.view.lkml"
+include: "//@{CONFIG_PROJECT_NAME}/user.view.lkml"
 
 view: user {
   extends: [user_config]

@@ -1,4 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/forum_topic_config.view.lkml"
+include: "//@{CONFIG_PROJECT_NAME}/forum_topic.view.lkml"
 
 view: forum_topic {
   extends: [forum_topic_config]
