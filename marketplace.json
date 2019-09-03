@@ -2,7 +2,7 @@
   "label": "Zendesk",
   "category_label": "Tools",
   "branding": {
-    "image_uri": "https://wwwstatic-d.lookercdn.com/blocks/logos/fivetran.png",
+    "image_uri": "https://marketplace-api.looker.com/block-icons/zendesk.png",
     "tagline": "The Zendesk Block provides comprehensive analytics around customer support and satisfaction"
   },
 
