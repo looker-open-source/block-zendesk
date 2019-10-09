@@ -1,6 +1,6 @@
 {
   "label": "Zendesk",
-  "category_label": "Tools",
+  "category_label": "Models",
   "branding": {
     "image_uri": "https://marketplace-api.looker.com/block-icons/zendesk.png",
     "tagline": "The Zendesk Block provides comprehensive analytics around customer support and satisfaction"
