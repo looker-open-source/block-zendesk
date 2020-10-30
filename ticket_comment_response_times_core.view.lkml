@@ -1,9 +1,12 @@
-# If necessary, uncomment the line below to include explore_source.
-# include: "zendesk_analytics.model.lkml"
+include: "//@{CONFIG_PROJECT_NAME}/ticket_comment_response_times.view.lkml"
 
-explore: ticket_comment_response_times {}
 
 view: ticket_comment_response_times {
+  extends: [ticket_comment_response_times_config]
+}
+
+view: ticket_comment_response_times_core {
+  extension: required
   derived_table: {
     explore_source: ticket {
       column: created_time { field: ticket_comment.created_raw }
