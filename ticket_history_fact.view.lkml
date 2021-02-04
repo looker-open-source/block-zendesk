@@ -1,5 +1,11 @@
+include: "//@{CONFIG_PROJECT_NAME}/ticket_history_fact.view.lkml"
+
 # Quick facts about each ticket
 view: ticket_history_fact {
+  extends: [ticket_history_fact_config]
+  }
+
+view: ticket_history_fact_core {
   view_label: "Ticket"
   derived_table: {
     sql: SELECT
