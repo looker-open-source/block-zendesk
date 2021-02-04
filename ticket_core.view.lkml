@@ -72,7 +72,7 @@ view: ticket_core {
       day_of_week,
       month_name
     ]
-    sql: TIMESTAMP(DATETIME_ADD(DATETIME(${TABLE}.created_at), INTERVAL 810 DAY)) ;;
+    sql: DATETIME(${TABLE}.created_at) ;;
   }
 
   dimension: custom_github_issue {
