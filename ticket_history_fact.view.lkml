@@ -31,6 +31,7 @@ view: ticket_history_fact_core {
 
   dimension_group: first_response {
     type: time
+    datatype: datetime
     timeframes: [
       raw,
       time,
@@ -40,7 +41,7 @@ view: ticket_history_fact_core {
       quarter,
       year
     ]
-    sql: TIMESTAMP(DATETIME_ADD(DATETIME(${TABLE}.first_response), INTERVAL 810 DAY)) ;;
+    sql: DATETIME(${TABLE}.first_response) ;;
   }
 
   dimension: ticket_id {
@@ -52,6 +53,7 @@ view: ticket_history_fact_core {
 
   dimension_group: last_updated_status {
     type: time
+    datatype: datetime
     timeframes: [
       raw,
       time,
@@ -61,11 +63,12 @@ view: ticket_history_fact_core {
       quarter,
       year
     ]
-    sql: TIMESTAMP(DATETIME_ADD(DATETIME(${TABLE}.last_updated_status), INTERVAL 810 DAY)) ;;
+    sql: DATETIME(${TABLE}.last_updated_status) ;;
   }
 
   dimension_group: updated {
     type: time
+    datatype: datetime
     timeframes: [
       raw,
       time,
@@ -75,13 +78,14 @@ view: ticket_history_fact_core {
       quarter,
       year
     ]
-    sql: TIMESTAMP(DATETIME_ADD(DATETIME(${TABLE}.updated), INTERVAL 810 DAY)) ;;
+    sql: DATETIME(${TABLE}.updated);;
     hidden: yes
     # why is this not = to the field on ticket on some occasions? should be redundant.
   }
 
   dimension_group: last_updated_by_assignee {
     type: time
+    datatype: datetime
     timeframes: [
       raw,
       time,
@@ -91,11 +95,12 @@ view: ticket_history_fact_core {
       quarter,
       year
     ]
-    sql: TIMESTAMP(DATETIME_ADD(DATETIME(${TABLE}.last_updated_by_assignee), INTERVAL 810 DAY)) ;;
+    sql: DATETIME(${TABLE}.last_updated_by_assignee);;
   }
 
   dimension_group: last_updated_by_requester {
     type: time
+    datatype: datetime
     timeframes: [
       raw,
       time,
@@ -105,11 +110,12 @@ view: ticket_history_fact_core {
       quarter,
       year
     ]
-    sql: TIMESTAMP(DATETIME_ADD(DATETIME(${TABLE}.last_updated_by_assignee), INTERVAL 810 DAY)) ;;
+    sql: DATETIME(${TABLE}.last_updated_by_assignee) ;;
   }
 
   dimension_group: solved {
     type: time
+    datatype: datetime
     timeframes: [
       raw,
       time,
@@ -119,7 +125,7 @@ view: ticket_history_fact_core {
       quarter,
       year
     ]
-    sql: TIMESTAMP(DATETIME_ADD(DATETIME(${TABLE}.solved), INTERVAL 810 DAY)) ;;
+    sql:DATETIME(${TABLE}.solved) ;;
   }
 
   dimension_group: initially_assigned {
