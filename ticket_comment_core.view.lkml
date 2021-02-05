@@ -38,7 +38,7 @@ view: ticket_comment_core {
       quarter,
       year
     ]
-    sql: TIMESTAMP(DATETIME_ADD(DATETIME(${TABLE}.created), INTERVAL 810 DAY)) ;;
+    sql: DATETIME(${TABLE}.created) ;;
   }
 
   dimension: facebook_comment {
