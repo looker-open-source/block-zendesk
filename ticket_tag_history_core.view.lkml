@@ -23,7 +23,6 @@ view: ticket_tag_history_core {
     sql: ${TABLE}.ticket_id ;;
   }
 
-  # Things are dateshifted for dev purposes, but this should NOT be dateshifted (shoudl just be ${TABLE}.created_at
   dimension_group: updated {
     type: time
     timeframes: [
