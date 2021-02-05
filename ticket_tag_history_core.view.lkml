@@ -35,7 +35,7 @@ view: ticket_tag_history_core {
       quarter,
       year
     ]
-    sql: TIMESTAMP(DATETIME_ADD(DATETIME(${TABLE}.created_at), INTERVAL 810 DAY)) ;;
+    sql: DATETIME(${TABLE}.created_at) ;;
   }
 
   dimension: user_id {
