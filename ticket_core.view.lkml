@@ -59,7 +59,7 @@ view: ticket_core {
 
   dimension_group: created {
     type: time
-    datatype: datetime
+    datatype: timestamp
     timeframes: [
       raw,
       time,
