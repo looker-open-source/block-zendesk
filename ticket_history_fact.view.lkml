@@ -21,17 +21,17 @@ view: ticket_history_fact_core {
           ,count(distinct case when field_name = 'assignee_id' then value else null end) as number_of_distinct_assignees
           ,count(distinct case when field_name = 'group_id' then value else null end) as number_of_distinct_groups
 
-      FROM zendesk.ticket_field_history as tfh
+      FROM @{SCHEMA_NAME}.ticket_field_history as tfh
       LEFT JOIN (
           SELECT ticket_id, created, row_number() over (partition by ticket_id order by created asc) as comment_sequence
-          FROM zendesk.ticket_comment
+          FROM  @{SCHEMA_NAME}.ticket_comment
       ) tc on tc.ticket_id = tfh.ticket_id and tc.comment_sequence = 2
       GROUP BY tfh.ticket_id, tc.created ;;
   }
 
   dimension_group: first_response {
     type: time
-    datatype: datetime
+    datatype: timestamp
     timeframes: [
       raw,
       time,
@@ -41,7 +41,7 @@ view: ticket_history_fact_core {
       quarter,
       year
     ]
-    sql: DATETIME(${TABLE}.first_response) ;;
+    sql: ${TABLE}.first_response ;;
   }
 
   dimension: ticket_id {
@@ -53,7 +53,7 @@ view: ticket_history_fact_core {
 
   dimension_group: last_updated_status {
     type: time
-    datatype: datetime
+    datatype: timestamp
     timeframes: [
       raw,
       time,
@@ -63,12 +63,12 @@ view: ticket_history_fact_core {
       quarter,
       year
     ]
-    sql: DATETIME(${TABLE}.last_updated_status) ;;
+    sql: ${TABLE}.last_updated_status ;;
   }
 
   dimension_group: updated {
     type: time
-    datatype: datetime
+    datatype: timestamp
     timeframes: [
       raw,
       time,
@@ -78,14 +78,14 @@ view: ticket_history_fact_core {
       quarter,
       year
     ]
-    sql: DATETIME(${TABLE}.updated);;
+    sql: ${TABLE}.updated;;
     hidden: yes
     # why is this not = to the field on ticket on some occasions? should be redundant.
   }
 
   dimension_group: last_updated_by_assignee {
     type: time
-    datatype: datetime
+    datatype: timestamp
     timeframes: [
       raw,
       time,
@@ -95,12 +95,12 @@ view: ticket_history_fact_core {
       quarter,
       year
     ]
-    sql: DATETIME(${TABLE}.last_updated_by_assignee);;
+    sql: ${TABLE}.last_updated_by_assignee;;
   }
 
   dimension_group: last_updated_by_requester {
     type: time
-    datatype: datetime
+    datatype: timestamp
     timeframes: [
       raw,
       time,
@@ -110,12 +110,12 @@ view: ticket_history_fact_core {
       quarter,
       year
     ]
-    sql: DATETIME(${TABLE}.last_updated_by_assignee) ;;
+    sql: ${TABLE}.last_updated_by_assignee ;;
   }
 
   dimension_group: solved {
     type: time
-    datatype: datetime
+    datatype: timestamp
     timeframes: [
       raw,
       time,
@@ -125,7 +125,7 @@ view: ticket_history_fact_core {
       quarter,
       year
     ]
-    sql:DATETIME(${TABLE}.solved) ;;
+    sql:${TABLE}.solved ;;
   }
 
   dimension_group: initially_assigned {

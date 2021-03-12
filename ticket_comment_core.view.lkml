@@ -29,6 +29,7 @@ view: ticket_comment_core {
 
   dimension_group: created {
     type: time
+    datatype: timestamp
     timeframes: [
       raw,
       time,
@@ -38,7 +39,7 @@ view: ticket_comment_core {
       quarter,
       year
     ]
-    sql: DATETIME(${TABLE}.created) ;;
+    sql: ${TABLE}.created ;;
   }
 
   dimension: facebook_comment {

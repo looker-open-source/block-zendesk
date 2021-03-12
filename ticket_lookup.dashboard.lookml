@@ -1,6 +1,7 @@
 - dashboard: ticket_lookup
   title: Ticket Lookup
   layout: newspaper
+  preferred_viewer: dashboards
   elements:
   - title: Assigned To
     name: Assigned To
@@ -360,7 +361,6 @@
     explore: ticket
     type: looker_column
     fields: [ticket_comment.count, ticket_comment.created_week]
-    pivots: []
     fill_fields: [ticket_comment.created_week]
     sorts: [ticket_comment.created_week desc]
     limit: 500
@@ -467,6 +467,9 @@
     default_value: ''
     allow_multiple_values: true
     required: false
+    ui_config:
+      type: advanced
+      display: popover
     model: block_zendesk
     explore: ticket
     listens_to_filters: []
