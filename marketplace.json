@@ -31,7 +31,7 @@
   "auxiliary_projects": [
     {
       "git_uri": "git://github.com/looker/block-zendesk-config.git",
-      "git_ref": "7e5197613eb40585ea7d374f23a0ad7e8cba6e6f",
+      "git_ref": "f2c4fae279107355123fd257a8e3152fc6e4d5b5",
       "label": "Zendesk Config",
       "constant_name": "CONFIG_PROJECT_NAME"
     }
