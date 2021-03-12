@@ -1,6 +1,7 @@
 - dashboard: agent_dashboard
   title: Agent Dashboard
   layout: newspaper
+  preferred_viewer: dashboards
   elements:
   - title: Open Tickets
     name: Open Tickets
@@ -77,8 +78,7 @@
     explore: ticket
     type: single_value
     fields: [assignee.name, group.name]
-    filters:
-      assignee.name: Tom Davies
+    filters: {}
     sorts: [group.name desc]
     limit: 500
     column_limit: 50
@@ -90,6 +90,8 @@
     comparison_reverse_colors: false
     show_comparison_label: false
     series_types: {}
+    listen:
+      Assignee: assignee.name
     row: 0
     col: 0
     width: 8
@@ -120,20 +122,25 @@
     model: block_zendesk
     explore: ticket
     type: single_value
-    fields: [ticket.avg_days_to_solve, ticket.created_month]
-    fill_fields: [ticket.created_month]
+    fields: [ticket.avg_days_to_solve]
     filters:
       ticket.created_month: 6 months
-    sorts: [ticket.created_month desc]
     limit: 500
     column_limit: 50
     query_timezone: America/Los_Angeles
+    custom_color_enabled: false
+    show_single_value_title: true
+    show_comparison: false
+    comparison_type: value
+    comparison_reverse_colors: false
+    show_comparison_label: true
+    enable_conditional_formatting: false
+    conditional_formatting_include_totals: false
+    conditional_formatting_include_nulls: false
     font_size: small
     sparkline_color: ["#5b5d9a"]
     chart_alignment: bottom
     data_granularity: '1'
-    width: 4
-    height: 3
     stacking: ''
     show_value_labels: true
     label_density: 25
@@ -177,13 +184,7 @@
     groupBars: true
     labelSize: 10pt
     showLegend: true
-    custom_color_enabled: false
     custom_color: forestgreen
-    show_single_value_title: true
-    show_comparison: false
-    comparison_type: value
-    comparison_reverse_colors: false
-    show_comparison_label: true
     map_plot_mode: points
     heatmap_gridlines: false
     heatmap_gridlines_empty: false
@@ -211,9 +212,6 @@
     hide_totals: false
     hide_row_totals: false
     table_theme: editable
-    enable_conditional_formatting: false
-    conditional_formatting_include_totals: false
-    conditional_formatting_include_nulls: false
     series_types: {}
     colors: ['palette: Mixed Dark']
     series_colors: {}
@@ -221,28 +219,36 @@
         showLabels: false, showValues: true, tickDensity: default, tickDensityCustom: 5,
         type: linear, unpinAxis: false, valueFormat: !!null '', series: [{id: ticket.avg_days_to_solve,
             name: Avg Days to Solve, axisId: ticket.avg_days_to_solve}]}]
+    defaults_version: 1
     listen: {}
     row: 10
     col: 4
+    width: 4
+    height: 3
   - title: Solved Tickets (Team)
     name: Solved Tickets (Team)
     model: block_zendesk
     explore: ticket
     type: single_value
-    fields: [ticket.created_month, ticket.count_solved_tickets]
-    fill_fields: [ticket.created_month]
+    fields: [ticket.count_solved_tickets]
     filters:
       ticket.created_month: 6 months
-    sorts: [ticket.created_month desc]
     limit: 500
     column_limit: 50
     query_timezone: America/Los_Angeles
+    custom_color_enabled: false
+    show_single_value_title: true
+    show_comparison: false
+    comparison_type: value
+    comparison_reverse_colors: false
+    show_comparison_label: true
+    enable_conditional_formatting: false
+    conditional_formatting_include_totals: false
+    conditional_formatting_include_nulls: false
     font_size: small
     sparkline_color: ["#e9b404"]
     chart_alignment: bottom
     data_granularity: '1'
-    width: 4
-    height: 3
     stacking: ''
     show_value_labels: true
     label_density: 25
@@ -286,13 +292,7 @@
     groupBars: true
     labelSize: 10pt
     showLegend: true
-    custom_color_enabled: false
     custom_color: forestgreen
-    show_single_value_title: true
-    show_comparison: false
-    comparison_type: value
-    comparison_reverse_colors: false
-    show_comparison_label: true
     map_plot_mode: points
     heatmap_gridlines: false
     heatmap_gridlines_empty: false
@@ -320,9 +320,6 @@
     hide_totals: false
     hide_row_totals: false
     table_theme: editable
-    enable_conditional_formatting: false
-    conditional_formatting_include_totals: false
-    conditional_formatting_include_nulls: false
     series_types: {}
     colors: ['palette: Mixed Dark']
     series_colors: {}
@@ -330,28 +327,36 @@
         showLabels: false, showValues: true, tickDensity: default, tickDensityCustom: 5,
         type: linear, unpinAxis: false, valueFormat: !!null '', series: [{id: ticket.avg_days_to_solve,
             name: Avg Days to Solve, axisId: ticket.avg_days_to_solve}]}]
+    defaults_version: 1
     listen: {}
     row: 4
     col: 4
+    width: 4
+    height: 3
   - title: Avg 1st Response (Team)
     name: Avg 1st Response (Team)
     model: block_zendesk
     explore: ticket
     type: single_value
-    fields: [ticket.created_month, ticket.avg_hours_to_first_response]
-    fill_fields: [ticket.created_month]
+    fields: [ticket.avg_hours_to_first_response]
     filters:
       ticket.created_month: 6 months
-    sorts: [ticket.created_month desc]
     limit: 500
     column_limit: 50
     query_timezone: America/Los_Angeles
+    custom_color_enabled: false
+    show_single_value_title: true
+    show_comparison: false
+    comparison_type: value
+    comparison_reverse_colors: false
+    show_comparison_label: true
+    enable_conditional_formatting: false
+    conditional_formatting_include_totals: false
+    conditional_formatting_include_nulls: false
     font_size: small
     sparkline_color: ["#ed6168"]
     chart_alignment: bottom
     data_granularity: '1'
-    width: 4
-    height: 3
     stacking: ''
     show_value_labels: true
     label_density: 25
@@ -395,13 +400,7 @@
     groupBars: true
     labelSize: 10pt
     showLegend: true
-    custom_color_enabled: false
     custom_color: forestgreen
-    show_single_value_title: true
-    show_comparison: false
-    comparison_type: value
-    comparison_reverse_colors: false
-    show_comparison_label: true
     map_plot_mode: points
     heatmap_gridlines: false
     heatmap_gridlines_empty: false
@@ -429,9 +428,6 @@
     hide_totals: false
     hide_row_totals: false
     table_theme: editable
-    enable_conditional_formatting: false
-    conditional_formatting_include_totals: false
-    conditional_formatting_include_nulls: false
     series_types: {}
     colors: ['palette: Mixed Dark']
     series_colors: {}
@@ -439,9 +435,12 @@
         showLabels: false, showValues: true, tickDensity: default, tickDensityCustom: 5,
         type: linear, unpinAxis: false, valueFormat: !!null '', series: [{id: ticket.avg_days_to_solve,
             name: Avg Days to Solve, axisId: ticket.avg_days_to_solve}]}]
+    defaults_version: 1
     listen: {}
     row: 7
     col: 4
+    width: 4
+    height: 3
   - title: Solved Tickets vs Peers
     name: Solved Tickets vs Peers
     model: block_zendesk
@@ -514,7 +513,6 @@
     type: looker_bar
     fields: [assignee.name, assignee.output_name_select, ticket.avg_days_to_solve]
     filters:
-      assignee.name_select: Tom Davies
       assignee.name: "-NULL"
     sorts: [ticket.avg_days_to_solve desc]
     limit: 500
@@ -568,7 +566,8 @@
     totals_color: "#000000"
     hidden_fields: [assignee.output_name_select, ticket_close_dates.average_time_to_resolution,
       ticket.avg_days_to_solve]
-    listen: {}
+    listen:
+      Assignee: assignee.name_select
     row: 10
     col: 8
     width: 16
@@ -580,7 +579,6 @@
     type: looker_bar
     fields: [assignee.name, assignee.output_name_select, ticket.avg_hours_to_first_response]
     filters:
-      assignee.name_select: Tom Davies
       assignee.name: "-NULL"
     sorts: [ticket.avg_hours_to_first_response desc]
     limit: 500
@@ -634,7 +632,8 @@
     totals_color: "#000000"
     hidden_fields: [assignee.output_name_select, ticket_close_dates.average_time_to_resolution,
       ticket.avg_hours_to_first_response]
-    listen: {}
+    listen:
+      Assignee: assignee.name_select
     row: 16
     col: 8
     width: 16
@@ -737,20 +736,25 @@
     model: block_zendesk
     explore: ticket
     type: single_value
-    fields: [ticket.created_month, ticket.count_solved_tickets]
-    fill_fields: [ticket.created_month]
+    fields: [ticket.count_solved_tickets]
     filters:
       ticket.created_month: 6 months
-    sorts: [ticket.created_month desc]
     limit: 500
     column_limit: 50
     query_timezone: America/Los_Angeles
+    custom_color_enabled: false
+    show_single_value_title: true
+    show_comparison: false
+    comparison_type: value
+    comparison_reverse_colors: false
+    show_comparison_label: true
+    enable_conditional_formatting: false
+    conditional_formatting_include_totals: false
+    conditional_formatting_include_nulls: false
     font_size: small
     sparkline_color: ["#e9b404"]
     chart_alignment: bottom
     data_granularity: '1'
-    width: 4
-    height: 3
     stacking: ''
     show_value_labels: true
     label_density: 25
@@ -794,13 +798,7 @@
     groupBars: true
     labelSize: 10pt
     showLegend: true
-    custom_color_enabled: false
     custom_color: forestgreen
-    show_single_value_title: true
-    show_comparison: false
-    comparison_type: value
-    comparison_reverse_colors: false
-    show_comparison_label: true
     map_plot_mode: points
     heatmap_gridlines: false
     heatmap_gridlines_empty: false
@@ -828,9 +826,6 @@
     hide_totals: false
     hide_row_totals: false
     table_theme: editable
-    enable_conditional_formatting: false
-    conditional_formatting_include_totals: false
-    conditional_formatting_include_nulls: false
     series_types: {}
     colors: ['palette: Mixed Dark']
     series_colors: {}
@@ -838,29 +833,37 @@
         showLabels: false, showValues: true, tickDensity: default, tickDensityCustom: 5,
         type: linear, unpinAxis: false, valueFormat: !!null '', series: [{id: ticket.avg_days_to_solve,
             name: Avg Days to Solve, axisId: ticket.avg_days_to_solve}]}]
+    defaults_version: 1
     listen:
       Assignee: assignee.name
     row: 4
     col: 0
+    width: 4
+    height: 3
   - title: Avg 1st Response Hrs (Rep)
     name: Avg 1st Response Hrs (Rep)
     model: block_zendesk
     explore: ticket
     type: single_value
-    fields: [ticket.created_month, ticket.avg_hours_to_first_response]
-    fill_fields: [ticket.created_month]
+    fields: [ticket.avg_hours_to_first_response]
     filters:
       ticket.created_month: 6 months
-    sorts: [ticket.created_month desc]
     limit: 500
     column_limit: 50
     query_timezone: America/Los_Angeles
+    custom_color_enabled: false
+    show_single_value_title: true
+    show_comparison: false
+    comparison_type: value
+    comparison_reverse_colors: false
+    show_comparison_label: true
+    enable_conditional_formatting: false
+    conditional_formatting_include_totals: false
+    conditional_formatting_include_nulls: false
     font_size: small
     sparkline_color: ["#ed6168"]
     chart_alignment: bottom
     data_granularity: '1'
-    width: 4
-    height: 3
     stacking: ''
     show_value_labels: true
     label_density: 25
@@ -904,13 +907,7 @@
     groupBars: true
     labelSize: 10pt
     showLegend: true
-    custom_color_enabled: false
     custom_color: forestgreen
-    show_single_value_title: true
-    show_comparison: false
-    comparison_type: value
-    comparison_reverse_colors: false
-    show_comparison_label: true
     map_plot_mode: points
     heatmap_gridlines: false
     heatmap_gridlines_empty: false
@@ -938,9 +935,6 @@
     hide_totals: false
     hide_row_totals: false
     table_theme: editable
-    enable_conditional_formatting: false
-    conditional_formatting_include_totals: false
-    conditional_formatting_include_nulls: false
     series_types: {}
     colors: ['palette: Mixed Dark']
     series_colors: {}
@@ -948,30 +942,38 @@
         showLabels: false, showValues: true, tickDensity: default, tickDensityCustom: 5,
         type: linear, unpinAxis: false, valueFormat: !!null '', series: [{id: ticket.avg_days_to_solve,
             name: Avg Days to Solve, axisId: ticket.avg_days_to_solve}]}]
+    defaults_version: 1
     listen:
       Assignee: assignee.name
     row: 7
     col: 0
+    width: 4
+    height: 3
   - title: Avg Days to Solve (Rep)
     name: Avg Days to Solve (Rep)
     model: block_zendesk
     explore: ticket
     type: single_value
-    fields: [ticket.created_month, ticket.avg_days_to_solve]
-    fill_fields: [ticket.created_month]
+    fields: [ticket.avg_days_to_solve]
     filters:
       ticket.created_month: 6 months
       ticket.name_select: ''
-    sorts: [ticket.created_month desc]
     limit: 500
     column_limit: 50
     query_timezone: America/Los_Angeles
+    custom_color_enabled: false
+    show_single_value_title: true
+    show_comparison: false
+    comparison_type: value
+    comparison_reverse_colors: false
+    show_comparison_label: true
+    enable_conditional_formatting: false
+    conditional_formatting_include_totals: false
+    conditional_formatting_include_nulls: false
     font_size: small
     sparkline_color: ["#5b5d9a"]
     chart_alignment: bottom
     data_granularity: '1'
-    width: 4
-    height: 3
     stacking: ''
     show_value_labels: true
     label_density: 25
@@ -1015,13 +1017,7 @@
     groupBars: true
     labelSize: 10pt
     showLegend: true
-    custom_color_enabled: false
     custom_color: forestgreen
-    show_single_value_title: true
-    show_comparison: false
-    comparison_type: value
-    comparison_reverse_colors: false
-    show_comparison_label: true
     map_plot_mode: points
     heatmap_gridlines: false
     heatmap_gridlines_empty: false
@@ -1049,9 +1045,6 @@
     hide_totals: false
     hide_row_totals: false
     table_theme: editable
-    enable_conditional_formatting: false
-    conditional_formatting_include_totals: false
-    conditional_formatting_include_nulls: false
     series_types: {}
     colors: ['palette: Mixed Dark']
     series_colors: {}
@@ -1059,10 +1052,13 @@
         showLabels: false, showValues: true, tickDensity: default, tickDensityCustom: 5,
         type: linear, unpinAxis: false, valueFormat: !!null '', series: [{id: ticket.avg_days_to_solve,
             name: Avg Days to Solve, axisId: ticket.avg_days_to_solve}]}]
+    defaults_version: 1
     listen:
       Assignee: assignee.name
     row: 10
     col: 0
+    width: 4
+    height: 3
   filters:
   - name: Assignee
     title: Assignee
@@ -1070,6 +1066,9 @@
     default_value: ''
     allow_multiple_values: true
     required: false
+    ui_config:
+      type: advanced
+      display: popover
     model: block_zendesk
     explore: ticket
     listens_to_filters: []

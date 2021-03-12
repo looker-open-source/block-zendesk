@@ -72,7 +72,7 @@ view: ticket_core {
       day_of_week,
       month_name
     ]
-    sql: DATETIME(${TABLE}.created_at) ;;
+    sql: ${TABLE}.created_at ;;
   }
 
   dimension: custom_github_issue {
@@ -324,12 +324,12 @@ view: ticket_core {
 
   dimension: minutes_to_first_response {
     type: number
-    sql: 1.00 * DATETIME_DIFF(EXTRACT(DATETIME FROM ${ticket_history_fact.first_response_raw}), EXTRACT(DATETIME FROM ${created_raw}), MINUTE) ;;
+    sql: 1.00 * TIMESTAMP_DIFF(${ticket_history_fact.first_response_raw}, ${created_raw}, MINUTE) ;;
   }
 
   dimension: hours_to_first_response {
     type: number
-    sql: 1.00 * DATETIME_DIFF(EXTRACT(DATETIME FROM ${ticket_history_fact.first_response_raw}), EXTRACT(DATETIME FROM ${created_raw}), HOUR) ;;
+    sql: 1.00 * TIMESTAMP_DIFF(${ticket_history_fact.first_response_raw}, ${created_raw}, HOUR) ;;
   }
 
   dimension: hours_to_solve {
@@ -459,5 +459,13 @@ view: ticket_core {
       ticket_tag.count,
       ticket_tag_history.count
     ]
+  }
+
+  set: ticket_detail {
+    fields: [id, organization.name, created_date, status, days_since_updated, subject, via_channel, assignee.name, requester.name]
+  }
+
+  set: response_detail {
+    fields: [id, organization.name, created_date, status, hours_to_first_response, days_since_updated, subject, via_channel, assignee.name, requester.name]
   }
 }

@@ -20,6 +20,7 @@ view: ticket_field_history_core {
 
   dimension_group: updated {
     type: time
+    datatype: timestamp
     timeframes: [
       raw,
       time,
@@ -29,7 +30,7 @@ view: ticket_field_history_core {
       quarter,
       year
     ]
-    sql: DATETIME(${TABLE}.updated) ;;
+    sql: ${TABLE}.updated ;;
   }
 
   dimension: user_id {

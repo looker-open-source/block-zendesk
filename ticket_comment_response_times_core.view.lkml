@@ -90,11 +90,17 @@ view: ticket_comment_response_times_core {
     type: average
     sql: ${response_time} ;;
     value_format_name: decimal_2
+    drill_fields: [response_detail*]
   }
 
   measure: median_response_time {
     type: median
     sql: ${response_time} ;;
     value_format_name: decimal_2
+    drill_fields: [response_detail*]
+  }
+
+  set: response_detail {
+    fields: [id, ticket_id, created_date, response_time, is_agent, user.name, user.email]
   }
 }

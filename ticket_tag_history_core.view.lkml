@@ -25,6 +25,7 @@ view: ticket_tag_history_core {
 
   dimension_group: updated {
     type: time
+    datatype: timestamp
     timeframes: [
       raw,
       time,
@@ -34,7 +35,7 @@ view: ticket_tag_history_core {
       quarter,
       year
     ]
-    sql: DATETIME(${TABLE}.created_at) ;;
+    sql: ${TABLE}.created_at ;;
   }
 
   dimension: user_id {

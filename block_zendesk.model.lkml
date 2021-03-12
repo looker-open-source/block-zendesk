@@ -9,7 +9,6 @@ include: "//@{CONFIG_PROJECT_NAME}/*.view"
 include: "//@{CONFIG_PROJECT_NAME}/*.model"
 include: "//@{CONFIG_PROJECT_NAME}/*.dashboard"
 
-bigquery_datetime_as_timestamp: no
 
 explore: agent {
   extends: [agent_config]
