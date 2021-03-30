@@ -1,7 +1,7 @@
 - dashboard: support_overview
   title: Support Overview
   layout: newspaper
-  preferred_viewer: dashboards
+  preferred_viewer: dashboards-next
   elements:
   - title: Tickets by Group
     name: Tickets by Group
