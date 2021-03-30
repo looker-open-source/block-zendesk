@@ -1,7 +1,7 @@
 - dashboard: agent_dashboard
   title: Agent Dashboard
   layout: newspaper
-  preferred_viewer: dashboards
+  preferred_viewer: dashboards-next
   elements:
   - title: Open Tickets
     name: Open Tickets
