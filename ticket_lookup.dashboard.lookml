@@ -1,7 +1,7 @@
 - dashboard: ticket_lookup
   title: Ticket Lookup
   layout: newspaper
-  preferred_viewer: dashboards
+  preferred_viewer: dashboards-next
   elements:
   - title: Assigned To
     name: Assigned To
