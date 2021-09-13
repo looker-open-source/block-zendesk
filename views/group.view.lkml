@@ -1,10 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/group.view.lkml"
-
 view: group {
-  extends: [group_config]
-}
-
-view: group_core {
   sql_table_name: @{SCHEMA_NAME}.`group` ;;
 
   ### Field descriptions source: https://developer.zendesk.com/rest_api/docs/support/groups

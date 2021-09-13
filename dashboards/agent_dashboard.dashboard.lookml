@@ -5,7 +5,7 @@
   elements:
   - title: Open Tickets
     name: Open Tickets
-    model: block_zendesk
+    model: block_zendesk_v2
     explore: ticket
     type: table
     fields: [ticket.created_date, ticket.ticket_link, ticket.priority, ticket.subject,
@@ -74,7 +74,7 @@
     height: 9
   - title: name
     name: name
-    model: block_zendesk
+    model: block_zendesk_v2
     explore: ticket
     type: single_value
     fields: [assignee.name, group.name]
@@ -98,7 +98,7 @@
     height: 4
   - title: Untitled
     name: Untitled
-    model: block_zendesk
+    model: block_zendesk_v2
     explore: ticket
     type: single_value
     fields: [ticket.dash_title]
@@ -119,7 +119,7 @@
     height: 4
   - title: Avg Days to Solve (Team)
     name: Avg Days to Solve (Team)
-    model: block_zendesk
+    model: block_zendesk_v2
     explore: ticket
     type: single_value
     fields: [ticket.avg_days_to_solve]
@@ -227,7 +227,7 @@
     height: 3
   - title: Solved Tickets (Team)
     name: Solved Tickets (Team)
-    model: block_zendesk
+    model: block_zendesk_v2
     explore: ticket
     type: single_value
     fields: [ticket.count_solved_tickets]
@@ -335,7 +335,7 @@
     height: 3
   - title: Avg 1st Response (Team)
     name: Avg 1st Response (Team)
-    model: block_zendesk
+    model: block_zendesk_v2
     explore: ticket
     type: single_value
     fields: [ticket.avg_hours_to_first_response]
@@ -443,7 +443,7 @@
     height: 3
   - title: Solved Tickets vs Peers
     name: Solved Tickets vs Peers
-    model: block_zendesk
+    model: block_zendesk_v2
     explore: ticket
     type: looker_bar
     fields: [assignee.name, assignee.output_name_select, ticket.count_solved_tickets]
@@ -508,7 +508,7 @@
     height: 6
   - title: Days to Resolution
     name: Days to Resolution
-    model: block_zendesk
+    model: block_zendesk_v2
     explore: ticket
     type: looker_bar
     fields: [assignee.name, assignee.output_name_select, ticket.avg_days_to_solve]
@@ -574,7 +574,7 @@
     height: 6
   - title: Hours to 1st Response
     name: Hours to 1st Response
-    model: block_zendesk
+    model: block_zendesk_v2
     explore: ticket
     type: looker_bar
     fields: [assignee.name, assignee.output_name_select, ticket.avg_hours_to_first_response]
@@ -640,7 +640,7 @@
     height: 7
   - title: Open Ticket Timeline
     name: Open Ticket Timeline
-    model: block_zendesk
+    model: block_zendesk_v2
     explore: ticket
     type: looker_timeline
     fields: [organization.name, ticket.created_date, ticket_close_dates.timeline_close_date,
@@ -670,7 +670,7 @@
     height: 18
   - title: Weekly Ticket Burndown
     name: Weekly Ticket Burndown
-    model: block_zendesk
+    model: block_zendesk_v2
     explore: ticket
     type: looker_column
     fields: [ticket.created_week, ticket.count_solved_tickets, ticket.count_open_tickets,
@@ -733,7 +733,7 @@
     height: 8
   - title: Solved Tickets (Rep)
     name: Solved Tickets (Rep)
-    model: block_zendesk
+    model: block_zendesk_v2
     explore: ticket
     type: single_value
     fields: [ticket.count_solved_tickets]
@@ -842,7 +842,7 @@
     height: 3
   - title: Avg 1st Response Hrs (Rep)
     name: Avg 1st Response Hrs (Rep)
-    model: block_zendesk
+    model: block_zendesk_v2
     explore: ticket
     type: single_value
     fields: [ticket.avg_hours_to_first_response]
@@ -951,7 +951,7 @@
     height: 3
   - title: Avg Days to Solve (Rep)
     name: Avg Days to Solve (Rep)
-    model: block_zendesk
+    model: block_zendesk_v2
     explore: ticket
     type: single_value
     fields: [ticket.avg_days_to_solve]
@@ -1069,7 +1069,7 @@
     ui_config:
       type: advanced
       display: popover
-    model: block_zendesk
+    model: block_zendesk_v2
     explore: ticket
     listens_to_filters: []
     field: assignee.name

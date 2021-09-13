@@ -1,12 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/ticket_comment_response_times.view.lkml"
-
-
 view: ticket_comment_response_times {
-  extends: [ticket_comment_response_times_config]
-}
-
-view: ticket_comment_response_times_core {
-  extension: required
   derived_table: {
     explore_source: ticket {
       column: created_time { field: ticket_comment.created_raw }

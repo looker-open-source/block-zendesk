@@ -1,10 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/organization_member.view.lkml"
-
 view: organization_member {
-  extends: [organization_member_config]
-}
-
-view: organization_member_core {
   sql_table_name: @{SCHEMA_NAME}.organization_member ;;
 
   ### Field descriptions source: https://developer.zendesk.com/rest_api/docs/support/organization_memberships

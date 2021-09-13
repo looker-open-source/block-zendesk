@@ -1,11 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/forum_topic.view.lkml"
-
 view: forum_topic {
-  extends: [forum_topic_config]
-}
-
-
-view: forum_topic_core {
   sql_table_name: @{SCHEMA_NAME}.forum_topic ;;
 
   dimension: id {

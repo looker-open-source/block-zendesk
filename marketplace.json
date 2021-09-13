@@ -14,9 +14,6 @@
     "SCHEMA_NAME": {
       "label": "Schema Name"
     },
-    "CONFIG_PROJECT_NAME": {
-      "label": "Config Project Name"
-    },
     "ZENDESK_INSTANCE_DOMAIN": {
       "label": "Zendesk Instance Domain",
       "description": "Domain of your Zendesk instance (i.e. if looker.zendesk.com, then provide 'looker')"
@@ -24,16 +21,8 @@
   },
   "models": [
     {
-      "name": "block_zendesk",
+      "name": "block_zendesk_v2",
       "connection_constant": "CONNECTION_NAME"
-    }
-  ],
-  "auxiliary_projects": [
-    {
-      "git_uri": "git://github.com/looker/block-zendesk-config.git",
-      "git_ref": "f2c4fae279107355123fd257a8e3152fc6e4d5b5",
-      "label": "Zendesk Config",
-      "constant_name": "CONFIG_PROJECT_NAME"
     }
   ]
 }

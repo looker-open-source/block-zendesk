@@ -1,7 +1,9 @@
-explore: ticket_core {
+# Include all Views
+include: "/views/*.view"
+
+explore: ticket {
   persist_for: "3 hours"
   sql_always_where: ${is_deleted} IS FALSE;;
-  extension: required
 
   join: ticket_comment {
     type: left_outer
