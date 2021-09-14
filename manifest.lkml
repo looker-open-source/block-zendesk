@@ -3,8 +3,7 @@ project_name: "block-zendesk"
 ################ Constants ################
 
 constant: CONNECTION_NAME {
-  value: "4mile_bigquery"
-  # value: "fivetran_looker_blocks_demo"
+  value: "fivetran_looker_blocks_demo"
   export: override_optional
 }
 
