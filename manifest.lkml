@@ -22,16 +22,4 @@ constant: ZENDESK_INSTANCE_DOMAIN {
   export: override_required
 }
 
-################ Dependencies ################
 
-local_dependency: {
-  project: "@{CONFIG_PROJECT_NAME}"
-
-    override_constant: SCHEMA_NAME {
-      value: "@{SCHEMA_NAME}"
-    }
-
-    override_constant: ZENDESK_INSTANCE_DOMAIN {
-      value: "@{ZENDESK_INSTANCE_DOMAIN}"
-    }
-}
