@@ -2,11 +2,6 @@ project_name: "block-zendesk"
 
 ################ Constants ################
 
-constant: CONFIG_PROJECT_NAME {
-  value: "block-zendesk-config"
-  export: override_required
-}
-
 constant: CONNECTION_NAME {
   value: "fivetran_looker_blocks_demo"
   export: override_required
