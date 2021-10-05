@@ -5,7 +5,7 @@
   elements:
   - title: Assigned To
     name: Assigned To
-    model: block_zendesk
+    model: block_zendesk_v2
     explore: ticket
     type: single_value
     fields: [assignee.name]
@@ -38,7 +38,7 @@
     height: 2
   - title: Customer
     name: Customer
-    model: block_zendesk
+    model: block_zendesk_v2
     explore: ticket
     type: single_value
     fields: [organization.name]
@@ -85,7 +85,7 @@
     height: 4
   - title: Requester
     name: Requester
-    model: block_zendesk
+    model: block_zendesk_v2
     explore: ticket
     type: looker_single_record
     fields: [requester.name, requester.email, requester.last_login_time, requester.phone,
@@ -126,7 +126,7 @@
     height: 4
   - title: Status
     name: Status
-    model: block_zendesk
+    model: block_zendesk_v2
     explore: ticket
     type: single_value
     fields: [ticket.status]
@@ -173,7 +173,7 @@
     height: 2
   - title: Last Updated
     name: Last Updated
-    model: block_zendesk
+    model: block_zendesk_v2
     explore: ticket
     type: single_value
     fields: [ticket_history_fact.last_updated_status_time]
@@ -224,7 +224,7 @@
     height: 4
   - title: Open in Zendesk
     name: Open in Zendesk
-    model: block_zendesk
+    model: block_zendesk_v2
     explore: ticket
     type: single_value
     fields: [ticket.id_direct_link]
@@ -270,7 +270,7 @@
     height: 4
   - title: Number of Open Tickets
     name: Number of Open Tickets
-    model: block_zendesk
+    model: block_zendesk_v2
     explore: ticket
     type: single_value
     fields: [requester_facts.number_of_open_tickets]
@@ -309,7 +309,7 @@
     height: 4
   - title: Comments
     name: Comments
-    model: block_zendesk
+    model: block_zendesk_v2
     explore: ticket
     type: table
     fields: [ticket_comment.created_time, ticket_comment.body]
@@ -357,7 +357,7 @@
     height: 7
   - title: Comments Over Time
     name: Comments Over Time
-    model: block_zendesk
+    model: block_zendesk_v2
     explore: ticket
     type: looker_column
     fields: [ticket_comment.count, ticket_comment.created_week]
@@ -421,7 +421,7 @@
     height: 8
   - title: Previous Tickets with This Account
     name: Previous Tickets with This Account
-    model: block_zendesk
+    model: block_zendesk_v2
     explore: ticket
     type: table
     fields: [requester_previous_tickets.id, requester_previous_tickets.status, requester_previous_tickets.created_date,
@@ -470,7 +470,7 @@
     ui_config:
       type: advanced
       display: popover
-    model: block_zendesk
+    model: block_zendesk_v2
     explore: ticket
     listens_to_filters: []
     field: ticket.id

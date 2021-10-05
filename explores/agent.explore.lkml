@@ -1,7 +1,9 @@
-explore: agent_core {
+# Include all Views
+include: "/views/*.view"
+
+explore: agent {
   view_name: user
   sql_always_where: ${is_agent} IS TRUE ;;
-  extension: required
 
   join: ticket_comment_response_times {
     type: left_outer

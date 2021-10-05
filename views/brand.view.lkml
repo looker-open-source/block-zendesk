@@ -1,10 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/brand.view.lkml"
-
 view: brand {
-  extends: [brand_config]
-}
-
-view: brand_core {
   sql_table_name: @{SCHEMA_NAME}.brand ;;
 
   ### Field descriptions source: https://developer.zendesk.com/rest_api/docs/support/brands

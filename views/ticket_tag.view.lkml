@@ -1,10 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/ticket_tag.view.lkml"
-
 view: ticket_tag {
-  extends: [ticket_tag_config]
-}
-
-view: ticket_tag_core {
   sql_table_name: @{SCHEMA_NAME}.ticket_tag ;;
 
   dimension: pk {

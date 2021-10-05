@@ -5,7 +5,7 @@
   elements:
   - title: Tickets by Group
     name: Tickets by Group
-    model: block_zendesk
+    model: block_zendesk_v2
     explore: ticket
     type: looker_pie
     fields: [ticket.count, group.name]
@@ -44,7 +44,7 @@
     height: 6
   - title: Tickets by Channel
     name: Tickets by Channel
-    model: block_zendesk
+    model: block_zendesk_v2
     explore: ticket
     type: looker_pie
     fields: [ticket.via_channel, ticket.count]
@@ -76,7 +76,7 @@
     height: 6
   - title: YoY Ticket Count
     name: YoY Ticket Count
-    model: block_zendesk
+    model: block_zendesk_v2
     explore: ticket
     type: looker_area
     fields: [ticket.count, ticket.created_year, ticket.created_month_name]
@@ -141,7 +141,7 @@
     height: 12
   - title: Solved Tickets (All-Time)
     name: Solved Tickets (All-Time)
-    model: block_zendesk
+    model: block_zendesk_v2
     explore: ticket
     type: single_value
     fields: [ticket.count_solved_tickets]
@@ -161,7 +161,7 @@
     height: 4
   - title: Open Tickets
     name: Open Tickets
-    model: block_zendesk
+    model: block_zendesk_v2
     explore: ticket
     type: single_value
     fields: [ticket.count_open_tickets]
@@ -181,7 +181,7 @@
     height: 4
   - title: Median Response Time (All-Time)
     name: Median Response Time (All-Time)
-    model: block_zendesk
+    model: block_zendesk_v2
     explore: agent
     type: single_value
     fields: [ticket_comment_response_times.median_response_time]
@@ -214,7 +214,7 @@
     height: 4
   - title: Median Time to Resolution (All-Time)
     name: Median Time to Resolution (All-Time)
-    model: block_zendesk
+    model: block_zendesk_v2
     explore: ticket
     type: single_value
     fields: [ticket_close_dates.median_time_to_resolution]
@@ -239,7 +239,7 @@
     height: 4
   - title: Daily Activity in the last 30 days
     name: Daily Activity in the last 30 days
-    model: block_zendesk
+    model: block_zendesk_v2
     explore: ticket
     type: looker_column
     fields: [ticket.created_date, ticket.count_solved_tickets, ticket.count_tickets_on_hold,
@@ -295,7 +295,7 @@
     height: 12
   - title: Ticket Distribution in the past 30 days
     name: Ticket Distribution in the past 30 days
-    model: block_zendesk
+    model: block_zendesk_v2
     explore: ticket
     type: looker_area
     fields: [assignee.name, ticket.count, ticket.created_date]

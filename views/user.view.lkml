@@ -1,11 +1,14 @@
-include: "//@{CONFIG_PROJECT_NAME}/user.view.lkml"
-
 view: user {
-  extends: [user_config]
-}
-
-view: user_core {
   sql_table_name: @{SCHEMA_NAME}.user ;;
+
+  ### Fields to be Customized
+
+  # Customize: Define what it means for a user to be support agent
+  dimension: is_agent {
+    type: yesno
+    sql: ${organization_id} = 27173710 ;;
+  }
+
 
   ### Field descriptions source: https://developer.zendesk.com/rest_api/docs/support/users
 
