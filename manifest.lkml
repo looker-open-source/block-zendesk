@@ -15,4 +15,4 @@ constant: SCHEMA_NAME {
 constant: ZENDESK_INSTANCE_DOMAIN {
   value: "insert here"
   export: override_optional
-
+}
